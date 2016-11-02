@@ -1,0 +1,12 @@
+{
+  "order-alphabetical": false,
+  "ids": false,
+  "font-sizes": false,
+  "box-model": false,
+  "adjoining-classes": false,
+  "important": false,
+  "floats": false,
+  "vendor-prefix": false,
+  "compatible-vendor-prefixes": false,
+  "outline-none": false
+}

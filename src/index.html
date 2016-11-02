@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>EXOATLET</title>
+
+	<!-- <link href="css/styles.min.css" rel="stylesheet"> -->
+	<link href="css/styles.css" rel="stylesheet">
+	
+  </head>
+  <body>
+	<div class="container-enter">
+	  <div class="container-inner">
+		<div class="visible-xs-block container-btn-menu-form">
+		  <div class="btn-mob-menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		  </div>
+		</div>
+		<p class="close-form">Закрыть</p>
+		<div class="top">
+		  <div class="container-descr">
+			<div class="inner">
+			  <p class="title">Привет!</p>
+			  <p>
+				Здесь любой текст, про то что тебе нужно выбрать подходящий аккаунт, чтобы войти или зарегистрироваться
+			  </p>
+			</div>
+		  </div>
+		  <div class="container-switches">
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation">
+				  <a href="#fiz" aria-controls="fiz" role="tab" data-toggle="tab">Для физ.лиц</a>
+				</li>
+				<li role="presentation"><a href="#ur" aria-controls="ur" role="tab" data-toggle="tab">Для юр.лиц</a></li>
+			</ul>
+		  </div>
+		</div>
+		<div class="tab-content">
+		  <div role="tabpanel" class="tab-pane" id="fiz">
+			<div class="bottom">
+			  <div class="inner">
+				<div class="container-enter-form">
+				  <form>
+					<div class="form-group">
+					  <label for="fizLogin">Имя пользователя</label>
+					  <input type="email" class="form-control" id="fizLogin">
+					</div>
+					<div class="form-group">
+					  <label for="fizPassword">Пароль</label>
+					  <span class="forgotten-passw pull-right">Забыли?</span>
+					  <input type="password" class="form-control" id="fizPassword" required>
+					</div>
+					<button type="submit" class="btn-form">Войти</button>
+				  </form>
+				</div>
+				<div class="container-forgotten-passw">
+				  <form>
+					<div class="form-group">
+					  <label for="urEmail">Эл.почта</label>
+					  <input type="email" class="form-control" id="urEmail" required>
+					</div>
+					<p class="descr">
+					  Укажите адрес эл.почты, мы вышлем вам пароль на этот адрес
+					</p>
+					<button type="submit" class="btn-form">Отправить</button>
+				  </form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div role="tabpanel" class="tab-pane" id="ur">
+			<div class="bottom">
+			  <div class="inner">
+				<div class="container-enter-form">
+				  <form>
+					<div class="form-group">
+					  <label for="urLogin">Организация</label>
+					  <input type="text" class="form-control" id="urLogin" required>
+					</div>
+					<div class="form-group">
+					  <label for="urPassword">Пароль</label>
+					  <span class="forgotten-passw pull-right">Забыли?</span>
+					  <input type="password" class="form-control" id="urPassword" required>
+					</div>
+					<button type="submit" class="btn-form">Войти</button>
+					<p class="container-btn-registr">
+					  <a class="link-registr">Регистрация</a>
+					</p>
+				  </form>
+				</div>
+				<div class="container-forgotten-passw">
+				  <form>
+					<div class="form-group">
+					  <label for="urEmail">Эл.почта</label>
+					  <input type="email" class="form-control" id="urEmail" placeholder="username@gmail.com" required>
+					</div>
+					<p class="descr">
+					  Укажите адрес эл.почты, мы вышлем вам пароль на этот адрес
+					</p>
+					<button type="submit" class="btn-form">Отправить</button>
+				  </form>
+				</div>                
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="container-registr-form">
+		  <div class="inner">
+			<p class="registr-title">Регистрация для юр.лиц</p>
+			<form>
+			  <div class="form-group">
+				<label for="regFio">ФИО</label>
+				<input type="text" class="form-control" id="regFio" placeholder="Укажите ваше ФИО">
+			  </div>
+			  <div class="form-group">
+				<label for="regPosition">Должность</label>
+				<input type="text" class="form-control" id="regPosition" placeholder="Укажите вашу должность">
+			  </div>
+			  <div class="form-group">
+				<label for="regEmail">Эл.почта</label>
+				<input type="email" class="form-control" id="regEmail" placeholder="Укажите вашу эл.почту">
+			  </div>
+			  <div class="form-group">
+				<label for="regTel">Телефон для связи</label>
+				<input type="text" class="form-control" id="regTel" placeholder="Укажите ваш номер телефона">
+			  </div>
+			  <div class="form-group">
+				<label for="regComp">Организация</label>
+				<input type="text" class="form-control" id="regComp" placeholder="Укажите название вашей организации">
+			  </div>
+			  <div class="form-group">
+				<label for="regSite">Сайт организации</label>
+				<input type="text" class="form-control" id="regSite" placeholder="Укажите сайт, если он есть">
+			  </div>
+			  <div class="form-group">
+				<label for="regPassw">Пароль</label>
+				<input type="password" class="form-control" id="regPassw">
+			  </div>
+			  <div class="block-checkbox">
+				<input type="checkbox" id="regSubscribe">
+				<label for="regSubscribe">Подписаться на рассылку</label>
+			  </div>
+			  <button type="submit" class="btn-form">Войти</button>
+			  <p class="container-btn-registr">
+				<a class="link-back">Вернуться</a>
+			  </p>
+			</form>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div class="wrapper page-main">
+	  <section class="section section-start dark-bg">
+		<header class="header">
+		  <div class="container">
+			<div class="visible-xs-inline-block pull-left">
+			  <div class="btn-mob-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			  </div>
+			</div>
+			  <div class="container-main-logo">
+				<a class="main-logo" href="index.html"><img class="img-responsive" src="img/main-logo.png" alt="ExoAtlet логотип"></a>
+			  </div>
+			  <div class="container-top-menu">
+				<button class="visible-xs-inline-block close-mob-menu">
+				  <img src="img/ico-close.png" alt="">
+				</button>
+				<ul class="top-menu">
+				  <li><a href="#">О проекте</a></li>
+				  <li><a href="#">Новости</a></li>
+				  <li><a href="#">Для дома</a></li>
+				  <li><a href="#">Для клиник</a></li>
+				  <li><a href="#">Команда</a></li>
+				  <li class="visible-xs-block mob-enter"><a href="#">Вход</a></li>
+				  <li class="visible-xs-block"><a href="#">Eng</a></li>
+				</ul>
+			  </div>
+			  <div class="container-switches">
+				<p class="pull-left switch-enter">
+				  <a>Вход</a>
+				</p>
+				<p class="pull-left switch-lang">
+				  <a>Eng</a>
+				</p>
+			  </div>
+		  </div>
+		</header>
+		
+		<div class="container-start">
+		  <div class="container-btn-play">
+			<div class="container">
+			  <div class="btn-play">
+				<div></div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="corner-circle"></div>
+		  <div class="container-start-center">
+			  <div class="container">
+				<div class="container-main-descr">
+					<div id="containerDescrTyped">
+					  <span class="test-link sdfsdfd">Протестировать</span>
+					</div>
+				</div>
+				<div id="typed-text">
+				  <p>Что мы делаем?<br>
+				  <span>Медицинский экзоскелет для реабилитации.</span><br>
+				  Мы даем <span>возможность встать в полный<br>рост</span> и это только начало!</p>
+				</div>
+				<span>
+					<span class="link-in-typed top-link sdfsdf">
+					  <a href="#">Протестировать</a>
+					</span>
+					<span class="link-in-typed bottom-link">
+					  <a href="#">Узнать больше</a>
+					</span>					
+				</span>
+			  </div>        
+		  </div>
+		  <div class="container-item-news">
+			<div class="container">
+			  <div class="container-block-news">
+				<div class="item-news">
+				  <div class="table-row">
+					<div class="col col-news-thumb">
+					  <img class="img-responsive" src="img/news-thumb.png" alt="">
+					</div>
+					<div class="col col-descr">
+					  <p class="title">14 августа 2016</p>
+					  <p>
+						ЭкзоАтлет представляет экзоскелет президенту РФ Владимиру Путину на Форуме Агенства Стратегических Инициатив
+					  </p>
+					</div>
+				  </div>
+				  <div class="table-row">
+					<div class="col col-news-thumb"></div>
+					<div class="col col-more">
+					  <p></p>
+					  <p class="more-news"><a href="#">Больше новостей</a></p>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>    
+		  </div>          
+		</div>
+		<div class="container-start-video">
+		  <div class="ico-mouse">
+			<img src="img/ico-mouse.png" alt="">
+		  </div>
+		  <div>
+			<video id="startVideo" width="100%" height="auto" loop="loop">
+			  <source src="exoatlet-video.mp4">
+			</video>
+		  </div>          
+		</div>
+
+		<div class="container container-screen__steps">
+			<div class="screen-steps">
+				<span class="filled">Шаги</span>
+				<p class="filled">00</p>
+				<p>01</p>
+				<p>02</p>
+				<p>03</p>
+				<p>04</p>
+				<p>05</p>
+				<p>06</p>
+			</div>
+		</div>
+	  </section>
+	  <section class="section section-for-home light-bg">
+		<div class="section-main-img">
+		  <img class="hidden-xs" src="img/exo-for-home.jpg" alt="">
+		  <img class="visible-xs-block" src="img/exo-for-home-mob.jpg" alt="">
+		  <div class="line-cover"></div>
+		  <div class="container-home-inner">
+			<div class="container">
+			  <p class="screen-number pull-right">01</p>
+			  <div class="container-descr">
+				<p class="section-title">ExoAtlet 1 для дома</p>
+				<p class="descr">
+				  Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает
+				</p>                
+			  </div>
+			  <div class="block-more">
+				<a href="#" id="triggerHome" class="link">Подробнее</a>
+				<div class="clearfix"></div>
+				<div class="divider thin"></div>
+				<div class="divider thick"></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div id="pinHome">
+		  <div class="controls-block">
+			<div id="slControlsHome" class="container-controls container">
+			  <div class="container-slide-numbers">
+				<span class="current">3</span>
+				<span class="all">| <span></span></span>
+			  </div>
+			  <div id="movedLeft" class="controls control-left"></div>
+			  <div id="movedRight" class="controls control-right"></div>              
+			</div>
+		  </div>
+		  <div class="container-moved">
+			<img src="img/home-img-1.png" alt="">
+			<img src="img/home-img-2.png" alt="">
+			<img src="img/home-img-3.png" alt="">
+			<img src="img/home-img-1.png" alt="">
+			<img src="img/home-img-2.png" alt="">
+		  </div>
+		  <div class="slick-home">
+			<div><img class="img-responsive" src="img/home-img-1.png" alt=""></div>
+			<div><img class="img-responsive" src="img/home-img-2.png" alt=""></div>
+			<div><img class="img-responsive" src="img/home-img-3.png" alt=""></div>
+			<div><img class="img-responsive" src="img/home-img-1.png" alt=""></div>
+			<div><img class="img-responsive" src="img/home-img-2.png" alt=""></div>
+		  </div>
+		</div>
+
+		<div class="container container-screen__steps">
+			<div class="screen-steps screen__steps-black">
+				<span class="filled">Шаги</span>
+				<p class="filled">00</p>
+				<p class="filled">01</p>
+				<p>02</p>
+				<p>03</p>
+				<p>04</p>
+				<p>05</p>
+				<p>06</p>
+			</div>
+		</div>
+	  </section>
+	  <section class="section section-for-hospital dark-bg">
+		<!-- <div class="section-inner"> -->
+		  <div class="section-top ">
+			<div class="container-screen-number">
+			  <div class="container">
+				<p class="screen-number">02</p>
+			  </div>
+			</div>
+			<div class="contaner-descr">
+			  <div class="container">
+				<div class="descr">
+				  <p class="section-title">ExoAtlet 1 для клиник</p>
+				  <div class="text">
+					<p>
+					  Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдаленно не напоминают
+					</p>
+					<a href="#" class="more">Подробнее</a>
+				  </div>
+				</div>                
+			  </div>
+			</div>
+			<div class="controls-block">
+			  <div id="slControlsHospital" class="container-controls container">
+				<div class="container-slide-numbers">
+				  <span class="current">1</span>
+				  <span class="all">| <span></span></span>
+				</div>
+				<div id="slLeftHospital" class="controls control-left"></div>
+				<div id="slRightHospital" class="controls control-right"></div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="section-bottom">
+			<div class="slick-hospital">
+			  <div><img src="img/img-hospital-1.png" alt=""></div>
+			  <div><img src="img/img-hospital-2.png" alt=""></div>
+			  <div><img src="img/img-hospital-3.png" alt=""></div>
+			  <div><img src="img/img-hospital-4.png" alt=""></div>
+			  <div><img src="img/img-hospital-1.png" alt=""></div>
+			  <div><img src="img/img-hospital-2.png" alt=""></div>
+			  <div><img src="img/img-hospital-3.png" alt=""></div>
+			  <div><img src="img/img-hospital-4.png" alt=""></div>
+			</div>
+		  </div>
+		<!-- </div> -->
+		<div class="container container-screen__steps">
+			<div class="screen-steps screen__steps-black">
+				<span class="filled">Шаги</span>
+				<p class="filled">00</p>
+				<p class="filled">01</p>
+				<p class="filled">02</p>
+				<p>03</p>
+				<p>04</p>
+				<p>05</p>
+				<p>06</p>
+			</div>
+		</div>
+	  </section>
+	  <section class="section section-pilots light-bg">
+	  <div class="sect-overlay"></div>
+		<div class="container pilots-inner">
+		  <div class="col-left">
+			<p id="triggerScale" class="section-title large">Ищем пилотов</p>
+			<div class="container-descr">
+			  <p class="sect-descr">
+				Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает.
+			  </p>
+			  <div class="divider"></div>
+			  <p><a href="#" class="link">Посмотреть другие города</a></p>
+			</div>
+		  </div>
+		  <div class="col-right">
+			<p id="tweenNumber" class="screen-number">03</p>
+			<div class="container-link-divider">
+			  <div class="divider"></div>
+			  <p><a href="#" class="link">Хочу стать пилотом</a></p>
+			</div>
+		  </div>
+		</div>
+		<div class="container container-screen__steps">
+			<div class="screen-steps screen__steps-black">
+				<span class="filled">Шаги</span>
+				<p class="filled">00</p>
+				<p class="filled">01</p>
+				<p class="filled">02</p>
+				<p class="filled">03</p>
+				<p>04</p>
+				<p>05</p>
+				<p>06</p>
+			</div>
+		</div>
+	  </section>
+	  <section class="section section-numbers blue-bg">
+		<div class="sect-inner">
+		  <div class="container">
+			<p class="section-title large">Немного цифр</p>
+			<div class="row-img row-with-descr">
+			  <div class="container-img large">
+				<img class="img-responsive" src="img/numbers-steps.png" alt="">
+				<p class="title">
+				  <span>456789</span>
+				  <span>шагов сделали</span>
+				</p>
+			  </div>
+			  <p class="descr">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.</p>
+			</div>
+			<div class="row-img center-row">
+			  <div class="container-img medium pull-right">
+				<img class="img-responsive" src="img/numbers-pilots.png" alt="">
+				<p class="title">
+				  <span>1356</span>
+				  <span>пилотов</span>
+				</p>
+			  </div>
+			  <p class="descr text-number">Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые </p>
+			</div>
+			<div class="row-img bottom-row">
+			  <div class="container-img small">
+				<img class="img-responsive" src="img/numbers-km.png" alt="">
+				<p class="title">
+				  <span>4578.5</span>
+				  <span>км прошли</span>
+				</p>
+			  </div>
+			  <p class="descr text-number">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает cосредоточиться. </p>
+			</div>
+		  </div>
+		</div>
+		<div class="container container-screen__steps">
+			<div class="screen-steps screen__steps-black_white">
+				<span class="filled">Шаги</span>
+				<p class="filled">00</p>
+				<p class="filled">01</p>
+				<p class="filled">02</p>
+				<p class="filled">03</p>
+				<p class="filled">04</p>
+				<p>05</p>
+				<p>06</p>
+			</div>
+		</div>
+	  </section>
+	  <section class="section section-news dark-bg">
+		<div class="container-screen-number">
+		  <div class="container">
+			<p class="screen-number">05</p>
+		  </div>
+		</div>
+		<div class="container news-inner">
+		  <div class="block-news-date visible-xs-inline-block">
+			<p class="date">14 августа</p>
+			<p class="year">2016</p>
+		  </div>
+		  <div class="item-news">
+			<div class="table-row">
+			  <div class="col col-date">
+				<p class="news-date">14 августа</p>
+				<p>2016</p>
+			  </div>
+			  <div class="col col-news-thumb">
+				<a href="#">
+				  <img class="img-responsive" src="img/news-thumb.png" alt="">
+				</a>
+			  </div>
+			  <div class="col col-descr">
+				<p>
+				  ЭкзоАтлет представляет экзоскелет президенту РФ Владимиру Путину на Форуме Агенства Стратегических Инициатив
+				</p>
+			  </div>
+			</div>
+			<div class="table-row">
+			<div class="col col-date"></div>
+			  <div class="col col-news-thumb"></div>
+			  <div class="col col-more">
+				<p></p>
+				<p class="more-news"><a href="#">Подробнее</a></p>
+			  </div>
+			</div>
+		  </div>
+		  <div class="row-bottom">
+			<div class="container-descr">
+			  <p class="title">Хочешь принять участие?</p>
+			  <p class="descr">
+				Объявлен набор новой группы пилотов для проведения серии клинических исследований ExoAtlet&#174; I в НМХЦ им. Н.И. Пирогова. Также мы проводим наборы в других городах. <br>
+				Следите за новостями.
+			  </p>
+			  <p><a href="#" class="link">Найти свой город</a></p>
+			</div>
+			<div class="container-thumb"><img class="img-responsive" src="img/pilot.png" alt=""></div>
+		  </div>
+		</div>
+		<div class="container container-screen__steps">
+			<div class="screen-steps screen__steps-black">
+				<span class="filled">Шаги</span>
+				<p class="filled">00</p>
+				<p class="filled">01</p>
+				<p class="filled">02</p>
+				<p class="filled">03</p>
+				<p class="filled">04</p>
+				<p class="filled">05</p>
+				<p>06</p>
+			</div>
+		</div>
+	  </section>
+	  <section class="section section-mission light-bg">
+		<div class="container">
+		  <div class="container-descr">
+			<p class="title">Наша цель</p>
+			<p class="descr">Создать условия, при которых максимальное количество пациентов с локомоторными нарушениями смогут в стационаре или амбулаторно сделать первые шаги к восстановлению и улучшению качества жизни. Мы готовы к сотрудничеству с дистрибьюторами на территории РФ и всего мира.</p>
+		  </div>
+		  <div class="container-link">
+			<div class="divider large"></div>
+			<div class="divider-link">
+			  <div class="divider small"></div>
+			  <a href="#" class="link">Подробнее</a>
+			</div>
+		  </div>
+		</div>
+		<div class="container container-screen__steps">
+			<div class="screen-steps screen__steps-black">
+				<span class="filled">Шаги</span>
+				<p class="filled">00</p>
+				<p class="filled">01</p>
+				<p class="filled">02</p>
+				<p class="filled">03</p>
+				<p class="filled">04</p>
+				<p class="filled">05</p>
+				<p class="filled">06</p>
+			</div>
+		</div>
+	  </section>
+	  <footer>
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-9 container-footer-menu">
+			  <div class="container-menu">
+				<ul>
+				  <li><a href="#">Условия использования</a></li>
+				  <li><a href="#">Клиники-партнеры</a></li>
+				  <li><a href="#">В разработке</a></li>
+				</ul>
+				<ul>
+				  <li><a href="#">Контакты</a></li>
+				  <li><a href="#">Форма обратной связи</a></li>
+				  <li><a href="#">Вакансии</a></li>
+				</ul>
+				<ul>
+				  <li><a href="#">Для прессы</a></li>
+				  <li><a href="#">Пресскит</a></li>
+				</ul>
+				<ul class="menu__native">
+				  <li><a href="#">Стать пилотом</a></li>
+				  <li><a href="#">Протестировать</a></li>
+				</ul>
+				<ul>
+				  <li><a id="footerEnter" href="#">Вход</a></li>
+				</ul>
+			  </div>
+			</div>
+			<div class="col-md-2 col-md-offset-1 container-socials">
+			  <div class="inner">
+				<a href="#" class="facebook"></a>
+				<a href="#" class="vk"></a>
+				<a href="#" class="ok"></a>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+	</div>    
+
+	<!-- <script src="js/app.min.js"></script> -->
+	<script src="js/app.js"></script>
+  </body>
+</html>
