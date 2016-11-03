@@ -276,9 +276,12 @@ jQuery(document).ready(function ($) {
 					mov = wImg - visible;
 					marg = parseInt($('.container-moved').css('marginLeft')) - mov;
 					activatorArrL = false;
-					// console.log($(this).index());
-					if ($(this).index() == 0) {
-						$('#movedRight').addClass('visible-arr');
+					console.log($(this).index());
+					if ($(this).index() == 4) {
+						$('.slControlsHome').find('.visible-arr').addClass('visible-arr');
+						$('#movedLeft').addClass('visible-arr');
+					} else {
+						$('#slControlsHome').find('.visible-arr').removeClass('visible-arr');
 					}
 					slideNum = $(this).index() + 1;
 				} else {
@@ -312,6 +315,14 @@ jQuery(document).ready(function ($) {
 					marg = parseInt($('.container-moved').css('marginLeft')) + mov;
 					activatorArrR = false;
 
+					console.log($(this).index());
+					if ($(this).index() == 1) {
+						// $('.slControlsHome').find('.visible-arr').addClass('visible-arr');
+						$('#movedRight').addClass('visible-arr');
+					} else {
+						$('#slControlsHome').find('.visible-arr').removeClass('visible-arr');
+					}
+
 				} else {
 					wImg += $(this).outerWidth(true);
 				}
@@ -325,6 +336,7 @@ jQuery(document).ready(function ($) {
 	$('.slick-home').slick({
 		slidesToShow: 2,
 		mobileFirst: true,
+		// dots: true,
 		// variableWidth: true,
 		appendArrows: $('#slControlsHome'),
 		prevArrow: $('#movedLeft'),
@@ -334,6 +346,7 @@ jQuery(document).ready(function ($) {
 		slidesToShow: 3,
 		variableWidth: true,
 		infinite: false,
+		// dots: true,
 		appendArrows: $('#slControlsHospital'),
 		prevArrow: $('#slLeftHospital'),
 		nextArrow: $('#slRightHospital')
@@ -348,20 +361,45 @@ jQuery(document).ready(function ($) {
 	//ФОРМЫ ВХОДА
 	$('.switch-enter a, #footerEnter').on('click', function () {
 		$('body').addClass('modal__opened').prepend('<div class="overlay"></div>');
-		$('.container-enter').fadeIn();
+		
+		if ($( document ).width()<768) {
+			$(this).parents('.container-enter').show();
+		}
+		else {
+			$('.container-enter').animate({'right':0},1000);		
+		}
+
 	});
 	$('.mob-enter a').on('click', function () {
 		$('body').prepend('<div class="overlay"></div>');
 		// $('.container-top-menu').toggleClass('opened');
 		$('.container-enter').fadeIn();
 	});
+    $(document).mouseup(function (e) {
+	    var container = $(".container-enter");
+	    var container2 = $(".container-top-menu");
+	    if ((container.has(e.target).length === 0) && (container2.has(e.target).length === 0) && ($( document ).width()>768)){
+	    	console.log('sdfsdf');
+	        if ($('.container-top-menu').hasClass('opened')) {
+				$('.container-top-menu').removeClass('opened');
+			}
+			$('body .overlay').remove();
+			$('body').removeClass('modal__opened');
+	        $('.container-enter').animate({'right':-600},1000);
+	    }
+	});
 	$('.container-enter .close-form').on('click', function () {
-
 		if ($('.container-top-menu').hasClass('opened')) {
 			$('.container-top-menu').removeClass('opened');
 		}
-		$(this).parents('.container-enter').fadeOut();
+		if ($( document ).width()<768) {
+			$(this).parents('.container-enter').hide();
+		}
+		else {
+			$(this).parents('.container-enter').animate({'right':-600},1000);			
+		}
 		$('body .overlay').remove();
+		$('body').removeClass('modal__opened');
 	});
 
 	$('.container-switches a').on('click', function () {
