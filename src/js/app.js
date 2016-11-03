@@ -435,4 +435,140 @@ jQuery(document).ready(function ($) {
 			$('.container-top-menu').toggleClass('opened');
 		}
 	});
+
+
+
+
+	// only for demo purposes
+	// $.validator.setDefaults({
+	// 	submitHandler: function() {
+	// 		alert("submitted!");
+	// 	}
+	// });
+
+	// 	// validate the form when it is submitted
+	// 	var validator = $("#form").validate({
+	// 		errorPlacement: function(error, element) {
+	// 			// Append error within linked label
+	// 			$( element )
+	// 				.closest( "form" )
+	// 					.find( "label[for='" + element.attr( "id" ) + "']" )
+	// 						.append( error );
+	// 		},
+	// 		errorElement: "span",
+	// 		messages: {
+	// 			fizLogin: {
+	// 				required: " (required)",
+	// 				minlength: " (must be at least 3 characters)"
+	// 			},
+	// 			password: {
+	// 				required: " (required)",
+	// 				minlength: " (must be between 5 and 12 characters)",
+	// 				maxlength: " (must be between 5 and 12 characters)"
+	// 			}
+	// 		}
+	// 	});
+
+	// 	$(".cancel").click(function() {
+	// 		validator.resetForm();
+	// 	});
+
+
+	// $('#form').validate(
+ //        {   
+ //            // правила для проверки
+ //            rules:{
+ //                firstname: {
+ //                    required: true,
+ //                    minlength: 2,
+ //                    maxlength: 30
+ //                    }   
+ //            },
+
+ //            // выводимые сообщения при нарушении соответствующих правил
+ //            messages:{
+ //                "fizLogin":{
+ //                    required: "Заполните это поле",
+ //                    minlength: "От 2 до 30 символов",
+ //                    maxlength: "От 2 до 30 символов"
+ //                }                       
+ //            },
+
+ //            // указаваем обработчик
+ //            submitHandler: function(form){
+ //                $(form).ajaxSubmit({
+ //                    target: '#preview', 
+ //                    success: function() { 
+ //                        $('#contact_form').slideUp("fast", function(){
+ //                        $(this).before($("<div id='checkmark'><img src='img/check.png'><p>Ваша заявка принята!</p></div>").delay(6000));                                
+ //                         }
+ //                         ).delay(6000).slideDown('fast',function() {$(this).prev().remove();});
+ //                         $("#form").clearForm();
+ //                        }                               
+ //                    }) 
+ //                    } 
+ //    }); 
+
+
+ $( "#form" ).validate( {
+				rules: {
+					firstname: "required",
+					lastname: "required",
+					fizLogin: {
+						required: true,
+						minlength: 2
+					},
+					password: {
+						required: true,
+						minlength: 5
+					},
+					confirm_password: {
+						required: true,
+						minlength: 5,
+						equalTo: "#password"
+					},
+					email: {
+						required: true,
+						email: true
+					},
+					agree: "required"
+				},
+				messages: {
+					firstname: "Please enter your firstname",
+					lastname: "Please enter your lastname",
+					username222: {
+						required: "Please enter a username",
+						minlength: "Your username must consist of at least 2 characters"
+					},
+					password: {
+						required: "Please provide a password",
+						minlength: "Your password must be at least 5 characters long"
+					},
+					confirm_password: {
+						required: "Please provide a password",
+						minlength: "Your password must be at least 5 characters long",
+						equalTo: "Please enter the same password as above"
+					},
+					email: "Please enter a valid email address",
+					agree: "Please accept our policy"
+				},
+				// errorElement: "em",
+				// errorPlacement: function ( error, element ) {
+				// 	// Add the `help-block` class to the error element
+				// 	error.addClass( "help-block" );
+
+				// 	if ( element.prop( "type" ) === "checkbox" ) {
+				// 		error.insertAfter( element.parent( "label" ) );
+				// 	} else {
+				// 		error.insertAfter( element );
+				// 	}
+				// },
+				highlight: function ( element, errorClass, validClass ) {
+					$( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
+				},
+				unhighlight: function (element, errorClass, validClass) {
+					$( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
+				}
+			} );
+
 });

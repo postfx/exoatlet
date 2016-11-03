@@ -25,6 +25,9 @@ a:hover {
 .table-cell {
 	display: table-cell;
 }
+label.error {
+	display: none!important;
+}
 
 /********************************* LESS VARIABLES *********************************/
 @blue: #00aeef;
@@ -328,6 +331,41 @@ a:hover {
 	.form-group.current {
 		label {
 			color: @blue;
+		}
+	}
+	.form-group.has-error {
+		position: relative;
+		label {
+			color: #ed1c24;
+		}
+		input {
+			border-color: #ed1c24;
+			position: relative;
+		}
+		&:after {
+			content: '';
+			background: url('../img/ico-form.png') no-repeat;
+			width: 14px; 
+			height: 14px;
+			background-position: 0 -15px;
+			display: inline-block;
+			position: absolute;
+			right: 18px;
+    		bottom: 18px;
+		}
+	}
+	.form-group.has-success {
+		position: relative;
+		&:after {
+			content: '';
+			background: url('../img/ico-form.png') no-repeat;
+			width: 21px; 
+			height: 15px;
+			background-position: 0 0px;
+			display: inline-block;
+			position: absolute;
+			right: 18px;
+    		bottom: 18px;
 		}
 	}
 	.forgotten-passw {
